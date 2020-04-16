@@ -1,0 +1,10 @@
+asgiref==3.2.7
+Django==3.0.5
+djangorestframework==3.11.0
+marshmallow==3.5.1
+marshmallow-sqlalchemy==0.22.3
+PyMySQL==0.9.3
+pytz==2019.3
+SQLAlchemy==1.3.16
+sqlparse==0.3.1
+view==0.1
