@@ -13,8 +13,8 @@ class User(Base):
     last_name = Column(String)
     birth_date = Column(Date)
     gender = Column(String)
-    user_name = Column(String)
-    password = Column(Integer)
+    email = Column(String)
+    password = Column(String)
 
     def __repr__(self):
         return "<User(first_name='%s', last_name='%s', birth_date='%s' , gender='%s')>" % (

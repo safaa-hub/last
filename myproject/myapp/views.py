@@ -1,9 +1,6 @@
 from rest_framework import status, viewsets
-from rest_framework.decorators import api_view, action
-from rest_framework.views import APIView
-from .sqlAlchemy import create_user
+from .sqlAlchemy import create_user, is_exist, get_user
 from rest_framework.response import Response
-from django.contrib.auth import authenticate, login
 from rest_framework import viewsets
 
 
@@ -12,27 +9,36 @@ class RegisterViewSet(viewsets.ViewSet):
     #  @action(detail=True, methods=['post'])
     def create(self, request):
         data = request.data
-        if data is not None:
+        if data:
             first_name = request.data.get('first_name')
             last_name = request.data.get('last_name')
             birth_date = request.data.get('birth_date')
             gender = request.data.get('gender')
-            user_name = request.data.get('user_name')
+            email = request.data.get('email')
             password = request.data.get('password')
-            create_user(first_name, last_name, birth_date, gender, user_name, password)
-            return Response(status=status.HTTP_201_CREATED)
+            k = is_exist(email, password)
+            if k is True:
+                return Response(status=status.HTTP_306_RESERVED)
+            else:
+                create_user(first_name, last_name, birth_date, gender, email, password)
+                return Response(status=status.HTTP_201_CREATED)
         else:
             return Response(status=status.HTTP_204_NO_CONTENT)
 
 
 class LoginView(viewsets.ViewSet):
 
-    def login_fun(self, request):
-        user_name = request.get['user_name']
-        password = request.get['password']
-        user = authenticate(request, username=user_name, password=password)
-        if user is not None:
-            login(request, user)
+    def create(self, request):
+        email = request.data.get('email')
+        password = request.data.get('password')
+        v = is_exist(email, password)
+        if v:
             return Response(status=status.HTTP_200_OK)
         else:
-            return Response(status=status.HTTP_204_NO_CONTENT)
+            return Response(status=status.HTTP_401_UNAUTHORIZED)
+
+
+class GetUser(viewsets.ViewSet):
+    def retrieve(self, request, pk=None):
+        user = get_user(pk)
+        return Response(user, status=status.HTTP_202_ACCEPTED)

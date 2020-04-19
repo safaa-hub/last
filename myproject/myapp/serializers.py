@@ -12,5 +12,5 @@ class UserSerializer(SQLAlchemySchema):
     last_name = auto_field()
     birth_date = auto_field()
     gender = auto_field()
-    user_name = auto_field()
+    email = auto_field()
     password = auto_field()
