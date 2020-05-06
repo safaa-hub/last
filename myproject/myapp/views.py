@@ -1,12 +1,16 @@
-from rest_framework import status, viewsets
-from .sqlAlchemy import create_user, is_exist, get_user
+from django.http import Http404
+from rest_framework import status
+from rest_framework.status import HTTP_404_NOT_FOUND
+
+from .sqlAlchemy import create_user, get_user_by_email, get_user_info
 from rest_framework.response import Response
 from rest_framework import viewsets
+import hashlib
+from .constant_file import SALT
+from .utils import InvalidEmail, NoContent, IncorrectPassword, NotLoggedIn, BadRequest
 
 
 class RegisterViewSet(viewsets.ViewSet):
-    #  @api_view(['POST'])
-    #  @action(detail=True, methods=['post'])
     def create(self, request):
         data = request.data
         if data:
@@ -16,29 +20,46 @@ class RegisterViewSet(viewsets.ViewSet):
             gender = request.data.get('gender')
             email = request.data.get('email')
             password = request.data.get('password')
-            k = is_exist(email, password)
-            if k is True:
-                return Response(status=status.HTTP_306_RESERVED)
-            else:
+            if get_user_by_email(email) is None:
                 create_user(first_name, last_name, birth_date, gender, email, password)
-                return Response(status=status.HTTP_201_CREATED)
+                return Response("Created", status=status.HTTP_201_CREATED)
+            else:
+                raise InvalidEmail
         else:
-            return Response(status=status.HTTP_204_NO_CONTENT)
+            raise NoContent
 
 
 class LoginView(viewsets.ViewSet):
 
     def create(self, request):
-        email = request.data.get('email')
-        password = request.data.get('password')
-        v = is_exist(email, password)
-        if v:
-            return Response(status=status.HTTP_200_OK)
+        data = request.data
+        if data:
+            email = request.data.get("email")
+            password = request.data.get("password")
+            user = get_user_by_email(email)
+            if user is None:
+                raise InvalidEmail
+            else:
+                encoded_password = hashlib.md5((str(password) + SALT).encode('utf-8')).hexdigest()
+                if user.password == encoded_password:
+                    request.session['user_id'] = user.id
+                    return Response("logged in Successfully", status=status.HTTP_200_OK)
+                else:
+                    raise IncorrectPassword
         else:
-            return Response(status=status.HTTP_401_UNAUTHORIZED)
+            raise NoContent
 
 
 class GetUser(viewsets.ViewSet):
-    def retrieve(self, request, pk=None):
-        user = get_user(pk)
-        return Response(user, status=status.HTTP_202_ACCEPTED)
+    def retrieve(self, request, pk):
+        if pk:
+            user = get_user_info(pk)
+            if user is None:
+                raise Http404
+            else:
+                if request.session.get('user_id') == user.get("id"):
+                    return Response(user, status=status.HTTP_200_OK)
+                else:
+                    raise NotLoggedIn
+        else:
+            raise BadRequest

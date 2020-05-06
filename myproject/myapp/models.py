@@ -1,8 +1,5 @@
-
-from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy import Column, Integer, String, Date
-
-Base = declarative_base()
+from .common_file import Base, engine
 
 
 class User(Base):
@@ -20,5 +17,5 @@ class User(Base):
         return "<User(first_name='%s', last_name='%s', birth_date='%s' , gender='%s')>" % (
             self.first_name, self.last_name, self.birth_date, self.gender)
 
-#  Base.metadata.create_all(engine)
 
+Base.metadata.create_all(engine)
