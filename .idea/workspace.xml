@@ -2,15 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="590451c3-5ec6-4890-b6a4-a7f60d441513" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/myproject/myapp/common_file.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/myproject/myapp/constant_file.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myproject/myapp/repositories/user_repository.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myproject/myapp/serializers/user_serializer.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myproject/myapp/views/get_user_view.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myproject/myapp/views/login_view.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myproject/myapp/views/register_view.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/myproject/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/myproject/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myproject/myapp/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/myproject/myapp/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myproject/myapp/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/myproject/myapp/serializers.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myproject/myapp/sqlAlchemy.py" beforeDir="false" afterPath="$PROJECT_DIR$/myproject/myapp/sqlAlchemy.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myproject/myapp/common_file.py" beforeDir="false" afterPath="$PROJECT_DIR$/myproject/myapp/common_file.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myproject/myapp/models.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/myproject/myapp/repository.py" beforeDir="false" afterPath="$PROJECT_DIR$/myproject/myapp/models/user_model.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myproject/myapp/serializers.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/myproject/myapp/sqlAlchemy.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/myproject/myapp/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/myproject/myapp/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myproject/myapp/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/myproject/myapp/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myproject/myapp/views.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/myproject/myproject/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/myproject/myproject/settings.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -40,8 +45,13 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="ToolWindowR Tools.ShowToolbar" value="false" />
   </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\hmds-\PycharmProjects\apitask2\myproject\myapp\views" />
+    </key>
+  </component>
   <component name="RunManager">
-    <configuration name="sqlAlchemy" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="repositories" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="apitask2" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -53,7 +63,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/myproject/myapp/sqlAlchemy.py" />
+      <option name="SCRIPT_NAME" value="C:\Users\hmds-\PycharmProjects\apitask2\myproject\myapp\repositories.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -64,7 +74,7 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.sqlAlchemy" />
+        <item itemvalue="Python.repositories" />
       </list>
     </recent_temporary>
   </component>
@@ -79,13 +89,33 @@
       <option name="presentableId" value="Default" />
       <updated>1586329626750</updated>
     </task>
+    <task id="LOCAL-00001" summary="committed by pycharm">
+      <created>1588754585634</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1588754585634</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="committed by pycharm" />
+    <option name="LAST_COMMIT_MESSAGE" value="committed by pycharm" />
   </component>
   <component name="WindowStateProjectService">
     <state x="275" y="22" key="#Notifications" timestamp="1587040623173">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="275" y="22" key="#Notifications/0.0.1366.728@0.0.1366.728" timestamp="1587040623173" />
+    <state x="413" y="111" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1588843633230">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="413" y="111" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1366.728@0.0.1366.728" timestamp="1588843633230" />
+    <state x="337" y="0" key="CommitChangelistDialog2" timestamp="1588754578713">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="337" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1588754578713" />
     <state width="1345" height="179" key="GridCell.Tab.0.bottom" timestamp="1587031240321">
       <screen x="0" y="0" width="1366" height="728" />
     </state>

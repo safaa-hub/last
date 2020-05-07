@@ -6,6 +6,6 @@ from sqlalchemy.orm import scoped_session, sessionmaker
 engine = create_engine("mysql+pymysql://root:Root@localhost/django", echo=True)
 session = scoped_session(sessionmaker(bind=engine))
 engine.connect()
-s = session()
+Session = session()
 
 Base = declarative_base()
