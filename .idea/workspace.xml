@@ -2,12 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="590451c3-5ec6-4890-b6a4-a7f60d441513" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/myproject/myapp/decorators/data_type.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myproject/myapp/decorators/login_required.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myproject/myapp/models/user_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/myproject/myapp/models/user_model.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myproject/myapp/serializers.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/myproject/myapp/sqlAlchemy.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/myproject/myapp/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/myproject/myapp/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myproject/myapp/views.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/myproject/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/myproject/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myproject/myapp/utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/myproject/myapp/utils.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myproject/myapp/views/get_user_view.py" beforeDir="false" afterPath="$PROJECT_DIR$/myproject/myapp/views/get_user_view.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myproject/myapp/views/register_view.py" beforeDir="false" afterPath="$PROJECT_DIR$/myproject/myapp/views/register_view.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -128,10 +129,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="184" y="6" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1588846923945" />
-    <state x="379" y="188" key="com.intellij.ide.util.TipDialog" timestamp="1588847091877">
+    <state x="379" y="188" key="com.intellij.ide.util.TipDialog" timestamp="1589095581209">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="379" y="188" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1588847091877" />
+    <state x="379" y="188" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1589095581209" />
     <state x="492" y="281" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1588683866218">
       <screen x="0" y="0" width="1366" height="728" />
     </state>

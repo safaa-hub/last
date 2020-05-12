@@ -3,11 +3,13 @@ from ..repositories.user_repository import UserRepository
 from rest_framework.response import Response
 from rest_framework import viewsets
 from ..utils import InvalidEmail, NoContent
+from ..decorators.data_type import check_type
 
 user_repository = UserRepository()
 
 
 class RegisterViewSet(viewsets.ViewSet):
+    @check_type
     def create(self, request):
         data = request.data
         if data:
