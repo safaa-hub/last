@@ -5,23 +5,19 @@ from rest_framework import status
 
 
 def custom_exception_handler(exc, context):
-    print("hyneeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee")
     global code
     response = exception_handler(exc, context)
     if isinstance(exc, APIException):
-        print("ApIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII")
         status_code = exc.status_code
         data = exc.default_detail
         code = exc.default_code
 
     elif isinstance(exc, Http404):
-        print("40000000000000000000000000000000000000000000000000000000004")
         status_code = status.HTTP_404_NOT_FOUND
         data = "Not Found"
         code = 404
 
     else:
-        print("elseeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee")
         status_code = status.HTTP_500_INTERNAL_SERVER_ERROR
         data = str(exc)
         code = 500
@@ -67,3 +63,33 @@ class InvalidType(APIException):
     status_code = status.HTTP_406_NOT_ACCEPTABLE
     default_code = 605
     default_detail = "Invalid Data Type"
+
+
+class InvalidFirstName(APIException):
+    status_code = status.HTTP_406_NOT_ACCEPTABLE
+    default_code = 606
+    default_detail = "Invalid first name type"
+
+
+class InvalidLastName(APIException):
+    status_code = status.HTTP_406_NOT_ACCEPTABLE
+    default_code = 607
+    default_detail = "Invalid last name type"
+
+
+class InvalidGender(APIException):
+    status_code = status.HTTP_406_NOT_ACCEPTABLE
+    default_code = 608
+    default_detail = "Invalid Gender type"
+
+
+class InvalidPassword(APIException):
+    status_code = status.HTTP_406_NOT_ACCEPTABLE
+    default_code = 609
+    default_detail = "Invalid password type"
+
+
+class InvalidBirthDate(APIException):
+    status_code = status.HTTP_406_NOT_ACCEPTABLE
+    default_code = 610
+    default_detail = "Invalid BirthDate"
